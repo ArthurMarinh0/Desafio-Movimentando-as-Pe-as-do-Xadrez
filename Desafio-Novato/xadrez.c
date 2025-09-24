@@ -9,10 +9,21 @@ int main(){
 
 //Movimentação da Torre
 
-    printf(" Movimento da Torre ");
+    printf("***Movimento da Torrez***\n");
     for(int i = 0; i < casasTorre; i++){
 
         printf("Direita\n");
+    }
+
+//Movimentação do Bispo
+    
+    printf("\n***Movimento do Bispo***\n");
+
+    int contadorBispo = 0;
+    
+    while(contadorBispo < casasBispo){
+        printf("Cima, Direita\n");
+        contadorBispo++;
     }
 
 
