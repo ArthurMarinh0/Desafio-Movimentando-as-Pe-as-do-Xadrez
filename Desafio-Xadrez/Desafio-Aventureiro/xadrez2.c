@@ -41,7 +41,22 @@ int main(){
     //O Cavalo se move duas casas em uma direção (horizontal ou vertical) e depois uma casa perpendicularmente, formando um "L".
     printf("\n***Movimento do cavalo***\n");
 
-    int contadorCavalo = 0;
-    
+    const int casasParaBaixo = 2;
+    const int casasParaEsquerda = 1;
+
+    int contadorEsquerda = 0;
+
+     for (int i = 0; i < casasParaBaixo; i++) {
+        printf("Baixo\n");
+
+        if (i == casasParaBaixo - 1) {
+            
+            while (contadorEsquerda < casasParaEsquerda) {
+                printf("Esquerda\n");
+                contadorEsquerda++;
+            }
+        }
+    }
+
     return 0;
 }
