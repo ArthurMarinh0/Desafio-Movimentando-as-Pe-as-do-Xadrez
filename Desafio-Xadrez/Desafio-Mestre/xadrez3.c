@@ -8,10 +8,15 @@ void recursiveTorre(int n){
     }
 }
 
-//Movimentação do Bispo
-void recursiveBispo(int n){
-    if(n > 0){
-        printf("Cima, Direita\n");
+//Movimentação do Bispo com recursividade e loops aninhados
+void recursiveBispo(int n) {
+    if (n > 0) {
+        // Loop externo: movimento vertical (cima)
+        printf("Cima, ");
+        // Loop interno: movimento horizontal (direita)
+        for (int i = 0; i < 1; i++) { // 1 passo para a direita por movimento
+            printf("Direita\n");
+        }
         recursiveBispo(n - 1);
     }
 }
@@ -47,8 +52,8 @@ int main(){
     printf("\n***Movimento da Rainha***\n");
     recursiveRainha(casasRainha);
 
-//Movimentação do cavalo
-printf("\n***Movimento do cavalo***\n");
+    //Movimentação do cavalo
+    printf("\n***Movimento do cavalo***\n");
 
     // Definindo os valores do movimento
     const int casasParaBaixo = 2;
