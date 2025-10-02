@@ -53,31 +53,27 @@ int main(){
     recursiveRainha(casasRainha);
 
     //Movimentação do cavalo
-    printf("\n***Movimento do cavalo***\n");
+    printf("\n***Movimento do Cavalo***\n");
 
-    // Definindo os valores do movimento
-    const int casasParaBaixo = 2;
-    const int casasParaEsquerda = 1;
+    int movimentos = 1; // Número de movimentos em "L"
+    int casasParaCima = 2;
+    int casasParaDireita = 1;
 
-    // Variável para controlar o loop interno
-    int contadorEsquerda = 0;
-
-    // Loop externo 'for' para os movimentos para baixo
-    // Ele vai executar 2 vezes (i=0 e i=1)
-    for (int i = 0; i < casasParaBaixo; i++) {
-        
-        // Em cada volta do loop, imprimimos "Baixo"
-        printf("Baixo\n");
-
-        // Condição para ativar o loop interno APENAS na última volta do loop externo
-        // i == casasParaBaixo - 1  ->  (1 == 2 - 1) -> (1 == 1)
-        if (i == casasParaBaixo - 1) {
-            
-            // Loop interno 'while' para o movimento para a esquerda
-            // Este loop só será executado quando i=1
-            while (contadorEsquerda < casasParaEsquerda) {
-                printf("Esquerda\n");
-                contadorEsquerda++;
+    for (int i = 0; i < movimentos; i++) {
+        int moveCima = 0, moveDireita = 0;
+        for (int j = 0; j < casasParaCima + casasParaDireita; j++) {
+            if (moveCima < casasParaCima) {
+                printf("Cima\n");
+                moveCima++;
+                continue;
+            }
+            if (moveDireita < casasParaDireita) {
+                printf("Direita\n");
+                moveDireita++;
+            }
+            // Se já fez o movimento em "L", interrompe o loop interno
+            if (moveCima == casasParaCima && moveDireita == casasParaDireita) {
+                break;
             }
         }
     }
